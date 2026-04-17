@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一般申請フォーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>一般申請フォーム</h2>
+        
+        <form id="workflowForm">
+            <div class="form-group">
+                <label for="court">組織名</label>
+                <input type="text" id="court" name="court" placeholder="組織名を入力してください" required>
+            </div>
+
+            <div class="form-group">
+                <label for="judge">担当者名</label>
+                <select id="judge" name="judge" required>
+                    <option value="">選択してください</option>
+                    <option value="user1">担当者1</option>
+                    <option value="user2">担当者2</option>
+                    <option value="user3">担当者3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="warrantNumber">申請番号</label>
+                <input type="text" id="warrantNumber" name="warrantNumber" placeholder="例：APP-2024-001" required>
+            </div>
+
+            <div class="form-group">
+                <label>必須添付ファイル</label>
+                <div id="dropZone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <p>ファイルを選択orドラッグ＆ドロップ</p>
+                        <input type="file" id="fileInput" name="warrantFile" style="display: none;">
+                        <div id="fileInfo" class="file-info" style="display: none;">
+                            <span id="fileName"></span>
+                            <button type="button" id="removeFile">削除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>任意添付ファイル</label>
+                <div id="dropZoneRef" class="drop-zone" style="border-style: solid; border-width: 1px; padding: 15px;">
+                    <div class="drop-zone-content">
+                        <p>ファイルを選択orドラッグ＆ドロップ</p>
+                        <input type="file" id="refFileInput" name="refFile" style="display: none;">
+                        <div id="refFileInfo" class="file-info" style="display: none;">
+                            <span id="refFileName"></span>
+                            <button type="button" id="refRemoveFile">削除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">申請を送信する</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

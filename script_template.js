@@ -2,6 +2,7 @@
     const config = {
         organizationName: "サンプル組織",
         assigneeName: "ユーザー1",
+        subject: "",  // 件名（指定時のみ入力）
         filePrefix: ""  // ファイル名のプレフィックス (例: "期日指定書_")
     };
 
@@ -45,6 +46,14 @@
     const applicationInput = document.getElementById('warrantNumber');
     if (applicationInput) {
         applicationInput.value = applicationNum;
+    }
+
+    // 件名の入力（configで指定されている場合のみ）
+    if (config.subject) {
+        const subjectInput = document.getElementById('subject');
+        if (subjectInput) {
+            subjectInput.value = config.subject;
+        }
     }
 
     console.log("ファイルに基づき入力を完了しました。");
